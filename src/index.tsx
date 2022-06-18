@@ -6,8 +6,10 @@ const root = createRoot(container!); // createRoot(container!) if you use TypeSc
 root.render(<App />);
 
 
-<html lang="en">
+<html lang="fr">
   <body>
-    <div id="root"></div>
+    <div id="root">
+
+    </div>
   </body>
 </html>
