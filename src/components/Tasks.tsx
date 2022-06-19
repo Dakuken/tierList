@@ -19,7 +19,8 @@ function Tasks() {
         }
 
         //si on bouge les elements
-        const column = data.container[source.droppableId]
+        const column = datas.container[source.droppableId]
+
         // on recup les id des profs actuelle
         const newProfIds = Array.from(column.profOrder)
         //on remplace dans l'array
@@ -53,7 +54,6 @@ function Tasks() {
         <div className='tasks'>
             <DragDropContext onDragEnd={OnDragEnd}>
                 {datas.ContainerOrder.map(contId => {
-                    console.log(datas.container[contId].profOrder);
                     const container = datas.container[contId]
                     const profs = container.profOrder.map(profId => datas.profs[profId])
                     return <Column key={container.id} container={container} profs={profs} />
