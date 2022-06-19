@@ -4,7 +4,7 @@ import { Draggable } from 'react-beautiful-dnd'
 function Task({ prof, index }: { prof: { id: string, name: string }, index: number }) {
     return (
 
-        <Draggable draggableId={prof.id} index={index} key={prof.id}>
+        <Draggable draggableId={prof.id} index={index}>
             {provider => (
                 <div
                     className="task_item"

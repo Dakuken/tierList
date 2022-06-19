@@ -7,9 +7,9 @@ import { DragDropContext, DropResult } from 'react-beautiful-dnd'
 
 
 function Tasks() {
-    const [datas, setdDatas] = useState(data)
-    // console.log(datas);
-    const onDragEnd = (result: DropResult) => {
+    const [datas, setDatas] = useState(data)
+
+    const OnDragEnd = (result: DropResult) => {
         const { destination, source, draggableId } = result
         if (!destination) {
             return
@@ -18,16 +18,10 @@ function Tasks() {
             return
         }
 
-        console.log(destination);
-        console.log(source);
-        console.log(draggableId);
-
         //si on bouge les elements
         const column = data.container[source.droppableId]
         // on recup les id des profs actuelle
         const newProfIds = Array.from(column.profOrder)
-        console.log(newProfIds, '^dsflg ,d^flgdùml ;ùm; gfdlmgf ùdg;');
-
         //on remplace dans l'array
         newProfIds.splice(source.index, 1)
         newProfIds.splice(destination.index, 0, draggableId)
@@ -38,16 +32,14 @@ function Tasks() {
         }
 
         const newState = {
-            ...data,
+            ...datas,
             container: {
                 ...data.container,
                 [newColumn.id]: newColumn,
             }
         }
 
-
-        setdDatas(newState)
-        console.log(column);
+        setDatas(newState)
         return
 
 
@@ -55,12 +47,14 @@ function Tasks() {
 
     }
 
+
     return (
 
         <div className='tasks'>
-            <DragDropContext onDragEnd={onDragEnd}>
+            <DragDropContext onDragEnd={OnDragEnd}>
                 {datas.ContainerOrder.map(contId => {
-                    const container = data.container[contId]
+                    console.log(datas.container[contId].profOrder);
+                    const container = datas.container[contId]
                     const profs = container.profOrder.map(profId => datas.profs[profId])
                     return <Column key={container.id} container={container} profs={profs} />
                 })}

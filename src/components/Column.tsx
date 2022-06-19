@@ -6,7 +6,7 @@ function Column({ container, profs }: { container: { id: string, name: string, p
     return (
         <div className='container'>
             <h2>{container.name}</h2>
-            <Droppable droppableId={container.id} key={container.id}>
+            <Droppable droppableId={container.id}>
                 {provider => (
                     <div {...provider.droppableProps}
                         ref={provider.innerRef}
