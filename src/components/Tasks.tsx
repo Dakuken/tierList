@@ -14,9 +14,45 @@ function Tasks() {
         if (!destination) {
             return
         }
+
+        if (destination.droppableId === source.droppableId && destination.index === source.index) {
+            return
+        }
+
         console.log(destination);
         console.log(source);
         console.log(draggableId);
+
+        //si on bouge les elements
+        const column = data.container[source.droppableId]
+        // on recup les id des profs actuelle
+        const newProfIds = Array.from(column.profOrder)
+        console.log(newProfIds, '^dsflg ,d^flgdùml ;ùm; gfdlmgf ùdg;');
+
+        //on remplace dans l'array
+        newProfIds.splice(source.index, 1)
+        newProfIds.splice(destination.index, 0, draggableId)
+        // on crée une copie de la colonne de profs modifié
+        const newColumn = {
+            ...column,
+            profOrder: newProfIds,
+        }
+
+        const newState = {
+            ...data,
+            container: {
+                ...data.container,
+                [newColumn.id]: newColumn,
+            }
+        }
+
+
+        setdDatas(newState)
+        console.log(column);
+        return
+
+
+
 
     }
 

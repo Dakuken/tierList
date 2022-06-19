@@ -15,6 +15,7 @@ function Column({ container, profs }: { container: { id: string, name: string, p
                         {profs.map((prof, index) => (
                             <Task key={prof.id} prof={prof} index={index} />
                         ))}
+                        {provider.placeholder}
                     </div>
                 )}
             </Droppable>

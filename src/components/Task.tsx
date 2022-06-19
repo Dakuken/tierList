@@ -3,7 +3,6 @@ import { Draggable } from 'react-beautiful-dnd'
 
 
 function Task({ prof, index }: { prof: { id: string, name: string }, index: number }) {
-    console.log(prof.id);
     return (
 
         <Draggable draggableId={prof.id} index={index} key={prof.id}>
