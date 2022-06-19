@@ -1,17 +1,32 @@
 
 interface pp {
+    container: {
+        [key: string]: {
+            id: string,
+            name: string,
+            profOrder: string[]
+        }
+    },
     profs: {
         [key: string]: {
             id: string
             name: string
         }
-    }
-    profOrder: string[]
+    },
+    ContainerOrder: string[]
 }
 
 
 
 const data: pp = {
+    container: {
+        container1: {
+            id: 'container1',
+            name: 'Container1',
+            profOrder: ["prof1", "prof2", "prof3", "prof4"],
+
+        }
+    },
     profs: {
         "prof1": {
             id: "prof1",
@@ -31,7 +46,7 @@ const data: pp = {
         },
 
     },
-    profOrder: ["prof1", "prof2", "prof3", "prof4"],
+    ContainerOrder: ["container1"]
 }
 
 

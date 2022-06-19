@@ -2,20 +2,23 @@ import React from 'react'
 import { Droppable } from 'react-beautiful-dnd'
 import Task from './Task'
 
-function Column({ key, profName, index }: { key: string, profName: string, index: number }) {
+function Column({ container, profs }: { container: { id: string, name: string, profOrder: string[] }, profs: { id: string, name: string }[] }) {
     return (
-        <div>
-            es f
-            {/* <Droppable droppableId={key}>
+        <div className='container'>
+            <h2>{container.name}</h2>
+            <Droppable droppableId={container.id} key={container.id}>
                 {provider => (
                     <div {...provider.droppableProps}
                         ref={provider.innerRef}
-                        className="NomProf"
+                        className="profs_list"
                     >
-                        <Task key={key} profName={profName} index={index} />
+                        {profs.map((prof, index) => (
+                            <Task key={prof.id} prof={prof} index={index} />
+                        ))}
                     </div>
                 )}
-            </Droppable> */}
+            </Droppable>
+
         </div>
     )
 }

@@ -2,22 +2,22 @@ import React, { Component } from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 
 
-function Task({ key, profName, index }: { key: string, profName: string, index: number }) {
+function Task({ prof, index }: { prof: { id: string, name: string }, index: number }) {
+    console.log(prof.id);
     return (
-        <div className='prof'>
-            <Draggable draggableId={key} index={index}>
-                {provider => (
-                    <div
-                        {...provider.draggableProps}
-                        {...provider.dragHandleProps}
-                        ref={provider.innerRef}
-                        className="NomProf2"
-                    >
-                        {profName}
-                    </div>
-                )}
-            </Draggable>
-        </div>
+
+        <Draggable draggableId={prof.id} index={index} key={prof.id}>
+            {provider => (
+                <div
+                    className="task_item"
+                    {...provider.draggableProps}
+                    {...provider.dragHandleProps}
+                    ref={provider.innerRef}
+                >
+                    {prof.name}
+                </div>
+            )}
+        </Draggable>
     )
 }
 
