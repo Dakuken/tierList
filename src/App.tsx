@@ -5,6 +5,7 @@ import './App.css';
 
 
 function App() {
+
   useEffect(() => {
     document.title = "Super tier List";
   });

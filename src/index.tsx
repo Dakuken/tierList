@@ -14,11 +14,25 @@ ReactDOM.render(
             <Favicon url={logo} animationDelay={500} />
         </head>
         <body>
-            <img src={logo} alt="loading..." />
-            <h1>Super tierlist</h1>
+            <div id="Header">
+                <h1>SUPER TIERLIST</h1>
+                <img id="DuckHeader" src={logo} alt="Canardddddd" />
+            </div>
             <div id="root">
                 <App />
+            </div>
+            <div id="divButtonValider">
+                <input type="button" id="BtnValider" value="Valider" />
+
             </div>
         </body>
     </html>
     , document.getElementById("root"));
+
+
+let buttonValider: HTMLInputElement = (document.querySelector("#BtnValider")) as HTMLInputElement;
+
+
+buttonValider.addEventListener("click", function () {
+    alert("Votre liste a été validée");
+});

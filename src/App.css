@@ -1,12 +1,29 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  font-family: roboto, sans-serif;
-  font-size: 16px;
+  background-color: #424242;
+  color: #000000;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  -moz-user-select: none;
+  /* Firefox */
+  -webkit-user-select: none;
+  /* Chrome, Safari, Opéra depuis la version 15 */
+  -ms-user-select: none;
+  /* Internet explorer depuis la version 10 et Edge */
+  user-select: none;
+  /* Propriété standard */
 }
 
 .App {
@@ -15,14 +32,136 @@ body {
   text-align: center;
 }
 
+/* ?++++++++++++++++++++++++++++++++++++++++++++ */
+/*                                              */
+/* ?Extra small devices (phones, 600px and down) */
+/*                                              */
+/* ?++++++++++++++++++++++++++++++++++++++++++++ */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 150%;
+  }
+
+  #DuckHeader {
+
+    width: 5%;
+  }
+}
+
+/* ?+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/*                                                                  */
+/* ?Small devices (portrait tablets and large phones, 600px and up) */
+/*                                                                  */
+/* ?+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 150%;
+  }
+
+  #DuckHeader {
+    width: 5%;
+  }
+
+}
+
+/* ?++++++++++++++++++++++++++++++++++++++++++++++++ */
+/*                                                   */
+/* ?Medium devices (landscape tablets, 768px and up) */
+/*                                                   */
+/* ?++++++++++++++++++++++++++++++++++++++++++++++++ */
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 300%;
+  }
+
+  #DuckHeader {
+    width: 5%;
+  }
+}
+
+/* ?++++++++++++++++++++++++++++++++++++++++++++++++ */
+/*                                                   */
+/* ?Large devices (laptops/desktops, 992px and up)   */
+/*                                                   */
+/* ?++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+@media only screen and (min-width: 992px) {
+  h1 {
+    font-size: 300%;
+  }
+
+  #DuckHeader {
+    width: 5%;
+  }
+}
+
+/* ?+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/*                                                                  */
+/* ?Extra large devices (large laptops and desktops, 1200px and up) */
+/*                                                                  */
+/* ?+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+@media only screen and (min-width: 1200px) {
+  h1 {
+    font-size: 300%;
+  }
+
+  #DuckHeader {
+    width: 5%;
+  }
+}
+
+
 #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: aliceblue;
+
   user-select: none;
 }
 
 .container>*>div {
-  color: green;
+  padding: 3%;
+  border-bottom: 3px solid #1a1a1a;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 1.2em;
+  width: 275px;
+}
+
+#Header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#DuckHeader {
+  min-width: 50px;
+  height: auto;
+  object-fit: cover;
+}
+
+#divButtonValider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+input[type=button] {
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  height: 2rem;
+  vertical-align: middle;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  min-width: 100px;
+  margin: 2%;
+
+}
+
+input[type=button]:hover {
+  background-color: rgb(39, 39, 39);
 }
