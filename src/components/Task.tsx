@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 
 
