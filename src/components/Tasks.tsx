@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import data from '../config/data'
 import Column from './Column'
+// import { DragDropContext, DropResult } from 'react-beautiful-dnd'
 import { DragDropContext, DropResult } from 'react-beautiful-dnd'
-
 
 
 
