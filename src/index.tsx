@@ -24,6 +24,7 @@ ReactDOM.render(
             <div id="divButtonValider">
                 <input type="button" id="BtnValider" value="Valider" />
             </div>
+            <a href="POUET/test.html"> POUEEEEEEEEEEEEEET</a>
         </body>
     </html>
     , document.getElementById("root"));
