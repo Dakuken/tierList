@@ -23,7 +23,6 @@ ReactDOM.render(
             </div>
             <div id="divButtonValider">
                 <input type="button" id="BtnValider" value="Valider" />
-
             </div>
         </body>
     </html>
